@@ -23,7 +23,7 @@ build_linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/amd64/product-api
 
 build_arm64:
-	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o bin/arm64/product-api
+	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o ./bin/arm64/product-api
 
 build_docker: build_linux build_arm64
 	docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
